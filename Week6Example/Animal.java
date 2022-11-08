@@ -14,6 +14,8 @@ public class Animal extends Actor
      */
     public void act()
     {
+        move(5);
+        turn(90);
         // Add your action code here.
     }
 }
