@@ -73,38 +73,41 @@ public class MarioWorld extends World
      * Build a pyramid of blocks.  The pyramid base is twice
      * the size, and the pyramid is size blocks high.
      * There is a gap of 2 blocks in the centre
+     * 
+     * @author Nick Day
+     * @version 8th November 2022
      */
     public void buildPyramid()
     {
         int size = getPyramidSize();
-        int x = 4; int y = GROUND_ROW;
-        int row_length = size;
+        int x = 4; 
+        int y = GROUND_ROW;
+        int cols = size;
+        int rows = 0;
         
-        int j = 0;
-        while(j < size)
+        //start at y = 17 , then go to 17 - size (e.g. 10)
+        while(y > GROUND_ROW - size)
         {
-            for(int i = 0; i < row_length; i++)
+            //repeat twice for both sides of the parting
+            for(int i = 0; i < 2; i++)
             {
-                Block Block = new Block();
-                addObject(Block, x, y);
-                x++;
-            }
-        
-            x = x + 2;
-        
-            for(int i = 0; i < row_length; i++)
-            {
-                Block Block = new Block();
-                addObject(Block, x, y);
-                x++;
+                //this loop is for one side
+                for(int side = 0; side < cols; side++)
+                {
+                    addObject(new Block(), x, y);
+                    x++;
+                }
+                //middle parting of two blocks
+                x = x + 2;
             }
             
-            row_length--;
-            x = 4 + (j+1);
-            y--;
-            j++;
+            cols--;  //reduce the length of columns for each row
+            x = 4 + (rows+1); //reposition x to be 1 in each time
+            y--;  // the row index (starts at 17) to 16 etc
+            rows++;  //number of rows completed 
         }
 
+        
         
         
 
