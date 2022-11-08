@@ -85,6 +85,25 @@ public class MarioWorld extends World
         int cols = size;
         int rows = 0;
         
+        //FIRST HALF:
+        
+        for(int i = 0; i < size; i++)
+        {
+            for(int side = 0; side < cols; side++)
+            {
+                addObject(new Block(), x, y);
+                x++;
+            }
+            x = 4 + (rows+1);
+            rows++;
+            
+            cols--;
+            y--;
+        }
+ 
+        //FULL SOLUTION: 
+        
+        /*
         //start at y = 17 , then go to 17 - size (e.g. 10)
         while(y > GROUND_ROW - size)
         {
@@ -106,11 +125,9 @@ public class MarioWorld extends World
             y--;  // the row index (starts at 17) to 16 etc
             rows++;  //number of rows completed 
         }
-
-        
-        
-        
-
+        */
+       
+       
     }
     
 }
