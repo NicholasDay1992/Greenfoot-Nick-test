@@ -14,5 +14,12 @@ public class Mario extends Actor
     {
         image = getImage();
         image.scale(30, 30);
+        Greenfoot.setSpeed(15);
+    }
+    
+    public void act()
+    {
+        //if block in front is not taken
+        move(1);
     }
 }

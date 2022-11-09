@@ -85,8 +85,31 @@ public class MarioWorld extends World
         int cols = size;
         int rows = 0;
         
-        //FIRST HALF:
+        for(rows = 0; rows < size; rows++)
+        {
+            //repeat the row loop twice
+            for (int sides = 0; sides < 2; sides++)
+            {
+                //single row
+                for(int i = 0; i < cols; i++)
+                {
+                    Block Block = new Block();
+                    addObject(Block, x, y);
+                    x++;
+                } 
+                x = x + 2;
+            }
+            cols--;
+            y--;
+            x = 4 + (rows +1);
+        }
+
         
+        
+        
+        
+        //FIRST HALF:
+        /*
         for(int i = 0; i < size; i++)
         {
             for(int side = 0; side < cols; side++)
@@ -100,7 +123,7 @@ public class MarioWorld extends World
             cols--;
             y--;
         }
- 
+        */ 
         //FULL SOLUTION: 
         
         /*
@@ -126,7 +149,6 @@ public class MarioWorld extends World
             rows++;  //number of rows completed 
         }
         */
-       
        
     }
     
