@@ -87,6 +87,30 @@ public class MarioWorld extends World
         int xStart = 4; 
         int xEnd = xStart + size;
         
+        //int xEnd2 = xStart + 2;
+        // each row
+        for(int y = yStart; y > yEnd; y--)
+        {
+            //left half
+            for (int x = xStart; x < xEnd; x++)
+            {
+                Block Block = new Block();
+                addObject(Block, x, y);
+            }
+            
+            //right half
+            for (int x = xEnd+2; x < xEnd + 2 + (xEnd - xStart); x++)
+            {
+                Block Block = new Block();
+                addObject(Block, x, y);
+            }
+            xStart++;
+        }
+
+        
+        
+        
+        /*
         for (int y = yStart; y >= yEnd; y--)
         {
             for(int x = xStart; x <= xEnd; x++)
@@ -94,6 +118,13 @@ public class MarioWorld extends World
                 Block Block = new Block();
                 addObject(Block, x, y);
             }
+            
+            for(int x = xEnd + 3; x <= xEnd + 3 + (xEnd - xStart); x++)
+            {
+                Block Block = new Block();
+                addObject(Block, x, y);
+            }
+            
             xStart++;
         }
 
