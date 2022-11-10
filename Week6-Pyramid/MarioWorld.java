@@ -87,7 +87,6 @@ public class MarioWorld extends World
         int xStart = 4; 
         int xEnd = xStart + size;
         
-        //int xEnd2 = xStart + 2;
         // each row
         for(int y = yStart; y > yEnd; y--)
         {
